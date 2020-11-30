@@ -1,1 +1,1 @@
-web: gunicorn lightspotters.wsgi --log-file -
+web: gunicorn lightspotters.wsgi:create_app --log-file -
