@@ -31,9 +31,9 @@ def create_app():
     from lightspotters.models import db
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///../db.sqlite3')
+    Migrate(app, db)
     db.init_app(app)
     db.app = app
-    Migrate(app, db)
 
     # Register routes
     app.register_blueprint(main)

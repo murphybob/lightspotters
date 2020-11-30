@@ -1,1 +1,3 @@
-from lightspotters.app import app as application
+from lightspotters.app import create_app
+
+create_app()
